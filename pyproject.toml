@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seleium-project"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "selenium>=4.52",
+    "python-dotenv>=1.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.2",
+    "pytest-html>=4.2",
+    "pytest-bdd>=9.0",
+]
+
+[tool.setuptools]
+packages = ["config", "utils"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--html=report.html --self-contained-html"
